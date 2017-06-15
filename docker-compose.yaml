@@ -1,0 +1,19 @@
+version: '2'
+services:
+  db:
+    build: mysql/ 
+    container_name: node_db
+    restart: always
+    ports:
+      - "0.0.0.0:3306:3306"
+
+  web:
+    build: node/
+    container_name: node_web
+    restart: always
+    ports:
+      - "0.0.0.0:3000:3000"
+    depends_on:
+      - db
+    links:
+      - db
