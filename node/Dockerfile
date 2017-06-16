@@ -9,3 +9,4 @@ ADD .      /basic_node_ci
 RUN        npm init --yes && npm install express --save
 EXPOSE     3000
 CMD        ["nodejs", "app.js"]
+
